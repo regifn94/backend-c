@@ -14,6 +14,7 @@ import com.backend.demo.model.Book;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/v1/books")
+@CrossOrigin(origins = "*")
 public class BookController {
 
     private final BookService booksService;
@@ -21,6 +22,11 @@ public class BookController {
     @GetMapping
     public List<Book> getBooks() {
         return booksService.allBooks();
+    }
+
+    @GetMapping("/{id}")
+    public Book getDetailBook(@PathVariable("id") Long id){
+        return booksService.getDetail(id);
     }
 
     @PostMapping
