@@ -1,8 +1,6 @@
 package com.backend.demo.controller;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import com.backend.demo.service.BookService;
 import lombok.RequiredArgsConstructor;
@@ -13,8 +11,7 @@ import com.backend.demo.model.Book;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/v1/books")
-@CrossOrigin(origins = "*")
+@RequestMapping("${api.prefix}/books")
 public class BookController {
 
     private final BookService booksService;
